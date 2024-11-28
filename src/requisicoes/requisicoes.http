@@ -1,0 +1,113 @@
+### Criar um novo usuário
+POST http://localhost:3000/usuarios
+Content-Type: application/json
+
+{
+  "nome": "João da Silva",
+  "email": "joao@example.com",
+  "telefone": "123456789",
+  "endereco": "Rua A",
+  "senha": "senha123",
+  "funcao": "cliente"
+}
+
+### Listar todos os usuários
+GET http://localhost:3000/usuarios
+
+### Obter um usuário pelo ID
+GET http://localhost:3000/usuarios/1
+
+### Deletar um usuário pelo ID
+DELETE http://localhost:3000/usuarios/1
+
+### Criar uma nova categoria
+POST http://localhost:3000/categorias
+Content-Type: application/json
+
+{
+  "nome": "Pizza"
+}
+
+### Listar todas as categorias
+GET http://localhost:3000/categorias
+
+### Obter uma categoria pelo ID
+GET http://localhost:3000/categorias/1
+
+### Atualizar uma categoria pelo ID
+PUT http://localhost:3000/categorias/1
+Content-Type: application/json
+
+{
+  "nome": "Pizza"
+}
+
+### Deletar uma categoria pelo ID
+DELETE http://localhost:3000/categorias/1
+
+### Criar um novo produto
+POST http://localhost:3000/produtos
+Content-Type: application/json
+
+{
+  "nome": "Pizza Portuguesa",
+  "preco": 23,
+  "categoriaId": 1
+}
+
+### Listar todos os produtos
+GET http://localhost:3000/produtos
+
+### Obter um produto pelo ID
+GET http://localhost:3000/produtos/1
+
+### Atualizar um produto pelo ID
+PUT http://localhost:3000/produtos/1
+Content-Type: application/json
+
+{
+  "nome": "Pizza Margherita Grande",
+  "preco": 39.99,
+  "categoriaId": 2
+}
+
+### Deletar um produto pelo ID
+DELETE http://localhost:3000/produtos/1
+
+### Criar um novo pedido
+POST http://localhost:3000/pedidos
+Content-Type: application/json
+
+{
+  "idUsuario": 1,
+  "produtos": [
+    {
+      "id": 1,
+      "quantidade": 3
+    },
+    {
+        "id": 2,
+        "quantidade": 2
+    }
+  ],
+  "status": "pendente",
+  "formaDePagamento": "cartão",
+  "tipoDeEntrega": "entrega"
+}
+
+### Listar todos os pedidos
+GET http://localhost:3000/pedidos
+
+### Obter um pedido pelo ID
+GET http://localhost:3000/pedidos/2
+
+### Atualizar o status de um pedido pelo ID
+PUT http://localhost:3000/pedidos/status/1
+Content-Type: application/json
+
+{
+  "status": "entregue"
+}
+
+### Deletar um pedido pelo ID
+DELETE http://localhost:3000/pedidos/1
